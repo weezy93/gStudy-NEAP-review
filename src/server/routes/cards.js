@@ -2,27 +2,13 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var knex = require('../../../db/knex');
+var queries = require('./queries.js');
 
-
-function Users() {
-  return knex('users');
-}
-
-function Decks() {
-  return knex('decks');
-}
-
-function Cards() {
-  return knex('cards');
-}
-
-
-router.post('/new', createCard)
+router.post('/:id/new', function(req, res, next) {
+  return queries.createCard(req.body)
+  .then(function (result) {
+    res.status(200).json(result);
+  });
+});
 
 module.exports = router;
-
-// *** functions *** //
-
-function createCard(req, res, next) {
-
-}

@@ -4,29 +4,17 @@ var pg = require('pg');
 var knex = require('../../../db/knex');
 var queries = require('./queries.js');
 
-function Users() {
-  return knex('users');
-}
-
-function Decks() {
-  return knex('decks');
-}
-
-function Cards() {
-  return knex('cards');
-}
-
 router.get('/:id', function (req, res, next) {
   return queries.getUserAndDeckNames(req.params.id)
   .then(function (result) {
-    res.json(result)
+    res.status(200).json(result);
   });
 });
 
 router.post('/new', function (req, res, next) {
   return queries.createUser(req.body)
   .then(function (result) {
-    res.json(result);
+    res.status(200).json(result);
   });
 });
 
