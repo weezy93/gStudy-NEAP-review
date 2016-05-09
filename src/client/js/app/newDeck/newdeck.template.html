@@ -1,4 +1,4 @@
-<form ng-submit="" class="u-full-width">
+<form ng-submit="vm.createDeck(vm.deck)" class="u-full-width">
 
   <div class="row">
     <fieldset>
@@ -7,11 +7,11 @@
 
     <div class="six columns">
       <label for="deckName">Deck Name</label>
-      <input class="u-full-width" type="text" placeholder="Basics of JavaScript" id="deckName">
+      <input class="u-full-width" type="text" placeholder="Basics of JavaScript" id="deckName" ng-model="vm.deck.name">
     </div>
     <div class="six columns">
-      <label for="deckDescription">Reason for contacting</label>
-      <textarea class="u-full-width" id="deckDescription" placeholder="Description"></textarea>
+      <label for="deckDescription">Description</label>
+      <textarea class="u-full-width" id="deckDescription" placeholder="Description" ng-model="vm.deck.description"></textarea>
     </div>
 
   </div>
