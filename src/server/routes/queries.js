@@ -19,6 +19,10 @@ module.exports = {
     });
   },
   createUser: function (params) {
-    return Users().insert(params).returning('id');
+    console.log(params);
+    return Users().insert(params).returning('id')
+    .then(function (id) {
+      return id;
+    });
   }
 }

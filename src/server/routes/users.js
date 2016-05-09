@@ -24,7 +24,10 @@ router.get('/:id', function (req, res, next) {
 });
 
 router.post('/new', function (req, res, next) {
-  return queries.createUser(req.body);
+  return queries.createUser(req.body)
+  .then(function (result) {
+    res.json(result);
+  });
 });
 
 module.exports = router;
