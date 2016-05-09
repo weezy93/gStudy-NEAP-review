@@ -1,7 +1,7 @@
 (function () {
   angular.module('gStudy')
   .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
     .state('home', {
@@ -11,6 +11,22 @@
     .state('dashboard', {
       url:'/dashboard',
       templateUrl: 'partials/dashboard.html'
+    })
+    .state('register', {
+      url:'/register',
+      templateUrl: 'partials/register.html'
+    })
+    .state('login', {
+      url:'/login',
+      templateUrl: 'partials/login.html'
+    })
+    .state('profile', {
+      url:'/users/:userID',
+      templateUrl: 'partials/profile.html'
+    })
+    .state('profile.createDeck', {
+      url: '/createDeck',
+      templateUrl: 'partials/createDeck.html'
     });
   });
 })();
