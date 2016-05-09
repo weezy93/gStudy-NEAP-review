@@ -15,7 +15,6 @@
       vm.deck = {};
 
       vm.createDeck = function (deck) {
-        console.log(deck);
         return newDeckService.createDeck(deck)
         .then(function (result) {
           console.log(result);
@@ -25,6 +24,5 @@
           console.log(err);
         });
       };
-
     }
 })();
