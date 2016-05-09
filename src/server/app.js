@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var flash = require('connect-flash');
 var session = require('express-session');
+var swig = require('swig');
 var Promise = require('bluebird');
 var passport = require('./lib/passport');
 var knex = require('../../db/knex');
@@ -15,12 +16,14 @@ var cookieSession = require('cookie-session');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var users = require('./routes/users.js')
+var decks = require('./routes/decks.js')
+var cards = require('./routes/cards.js')
 
 // *** express instance *** //
 var app = express();
 
-// *** static directory *** //
-app.set('views', path.join(__dirname, 'views'));
+
 
 // *** config middleware *** //
 app.use(logger('dev'));
@@ -57,6 +60,9 @@ passport.deserializeUser(function(id, done) {
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/users', routes);
+app.use('/decks', routes);
+app.use('/cards', routes);
 
 
 // catch 404 and forward to error handler
@@ -73,8 +79,8 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
+    res.status(err.status || 500)
+    .json({
       message: err.message,
       error: err
     });
@@ -84,8 +90,8 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
+  res.status(err.status || 500)
+  .json({
     message: err.message,
     error: {}
   });
