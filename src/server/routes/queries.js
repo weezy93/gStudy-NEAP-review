@@ -28,8 +28,14 @@ module.exports = {
       return id;
     });
   },
-  getCardsByDeckId: function (deckID) {
-    return Cards().select('*').join('decks', req.params.id, '=', 'cards.deck_id');
+  getDeckAndCardsByDeckID: function (deckID) {
+    return Decks().where('id', deckID)
+    .then(function (deck) {
+      return Cards().where('deck_id', deckID)
+      .then(function (result) {
+        return {deck: deck, cards: result};
+      });
+    });
   },
   createDeck: function (params) {
     return Decks().insert(params).returning('id');

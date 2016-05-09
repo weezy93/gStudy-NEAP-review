@@ -7,6 +7,12 @@
   function newCardCtrl($scope, newCardService) {
     var vm = this;
 
+    vm.deck;
+    newCardService.getCurrentDeck()
+    .then(function (result) {
+      console.log('current deck', result);
+    });
+
     var initialDeck = {
       deck_id: '',
       question: '',
@@ -18,7 +24,6 @@
     vm.createCard = function (card) {
       return newCardService.createCard(card)
       .then(function (result) {
-        console.log(result);
         vm.card = initialCard;
       })
       .catch(function (err) {

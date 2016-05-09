@@ -3,7 +3,9 @@
 
   angular.module('gStudy')
     .service('crudService', ['$http', function ($http) {
+
       var url = 'http://localhost:3000/';
+      
       return {
         getAll: function (resource) {
           return $http({
