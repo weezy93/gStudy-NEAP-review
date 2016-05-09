@@ -8,6 +8,9 @@
       url: '/',
       templateUrl: 'partials/home.html'
     })
-
+    .state('dashboard', {
+      url:'/dashboard',
+      templateUrl: 'partials/dashboard.html'
+    });
   });
 })();

@@ -6,7 +6,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swig = require('swig');
 var flash = require('connect-flash');
 var session = require('express-session');
 var Promise = require('bluebird');
@@ -14,24 +13,14 @@ var passport = require('./lib/passport');
 var knex = require('../../db/knex');
 var cookieSession = require('cookie-session');
 
-
 // *** routes *** //
 var routes = require('./routes/index.js');
-
 
 // *** express instance *** //
 var app = express();
 
-
-// *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
-app.set('view engine', 'html');
-
-
 // *** static directory *** //
 app.set('views', path.join(__dirname, 'views'));
-
 
 // *** config middleware *** //
 app.use(logger('dev'));
