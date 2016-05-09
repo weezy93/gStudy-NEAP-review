@@ -27,6 +27,19 @@
     .state('profile.createDeck', {
       url: '/createDeck',
       templateUrl: 'partials/createDeck.html'
+    })
+    .state('createCard', {
+      url:'/decks/:deckID',
+      templateUrl: 'partials/createCard.html',
+      controller: 'newCardCtrl'
+    })
+    .state('createCard.allCards', {
+      url:'/decks/:deckID/allCards',
+      templateUrl: 'partials/allCards.html'
+    })
+    .state('createCard.createCard', {
+      url:'/decks/:deckID/createCard',
+      templateUrl: 'partials/newCard.html'
     });
   });
 })();
