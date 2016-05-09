@@ -18,10 +18,10 @@
           });
         },
         addOne: function (resource, payload) {
-          return $http.post(url + resource, payload)
+          return $http.post(url + resource, payload);
         },
         updateOne: function (resource, payload) {
-          return $http.put(url + resource, payload)
+          return $http.put(url + resource, payload);
         },
         deleteOne: function (resource) {
           return $http.delete(url + resource);

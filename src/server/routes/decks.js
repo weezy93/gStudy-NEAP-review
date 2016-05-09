@@ -19,7 +19,7 @@ router.post('/:userID/new', function (req, res, next) {
   }
   return queries.createDeck(params)
   .then(function (result) {
-    res.status(200).json(result);
+    res.status(200).send(result);
   });
 });
 

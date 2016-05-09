@@ -2,9 +2,9 @@
   angular.module('gStudy')
     .controller('newDeckCtrl', newDeckCtrl);
 
-    newDeckCtrl.$inject = ['$scope', 'newDeckService'];
+    newDeckCtrl.$inject = ['$scope', '$location', 'newDeckService'];
 
-    function newDeckCtrl($scope, newDeckService) {
+    function newDeckCtrl($scope, $location, newDeckService) {
       var vm = this;
 
       var initialDeck = {
@@ -17,8 +17,8 @@
       vm.createDeck = function (deck) {
         return newDeckService.createDeck(deck)
         .then(function (result) {
-          console.log(result);
           vm.deck = initialDeck;
+          $location.path('/decks/' + result[0]);
         })
         .catch(function (err) {
           console.log(err);
