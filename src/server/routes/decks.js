@@ -4,15 +4,20 @@ var pg = require('pg');
 var knex = require('../../../db/knex');
 var queries = require('./queries.js');
 
-router.get('/:id', function(req, res, next) {
-  return queries.getCardsByDeckId(req.params.id)
+router.get('/:deckID', function(req, res, next) {
+  return queries.getCardsByDeckId(req.params.deckID)
   .then(function (result) {
     res.status(200).json(result);
   });
 });
 
-router.post('/new', function (req, res, next) {
-  return queries.createDeck(req.body)
+router.post('/:userID/new', function (req, res, next) {
+  var params = {
+    name: req.body.name,
+    description: req.body.description,
+    user_id: req.params.userID
+  }
+  return queries.createDeck(params)
   .then(function (result) {
     res.status(200).json(result);
   });

@@ -4,8 +4,8 @@ var pg = require('pg');
 var knex = require('../../../db/knex');
 var queries = require('./queries.js');
 
-router.get('/:id', function (req, res, next) {
-  return queries.getUserAndDeckNames(req.params.id)
+router.get('/:userID', function (req, res, next) {
+  return queries.getUserAndDeckNames(req.params.userID)
   .then(function (result) {
     res.status(200).json(result);
   });
