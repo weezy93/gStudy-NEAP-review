@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pg = require('pg');
 var knex = require('../../../db/knex');
+var queries = require('./queries.js');
 
 function Users() {
   return knex('users');
@@ -15,22 +16,15 @@ function Cards() {
   return knex('cards');
 }
 
+router.get('/:id', function (req, res, next) {
+  return queries.getUserAndDeckNames(req.params.id)
+  .then(function (result) {
+    res.json(result)
+  });
+});
 
-router.get('/:id', getUserAndDeckNames);
-router.post('/new', createUser);
+router.post('/new', function (req, res, next) {
+  return queries.createUser(req.body);
+});
 
 module.exports = router;
-
-
-// *** functions *** //
-
-// for user page, gets names of all decks by user id
-function getUserAndDeckNames(req, res, next) {
-  return Users().join('decks', req.params.id, '=', 'decks.user_id')
-  .select('users.username', 'decks.name');
-}
-
-// post to users
-function createUser(req, res, next) {
-  return Users().insert(req.body).returning('id');
-}

@@ -60,9 +60,9 @@ passport.deserializeUser(function(id, done) {
 
 // *** main routes *** //
 app.use('/', routes);
-app.use('/users', routes);
-app.use('/decks', routes);
-app.use('/cards', routes);
+app.use('/users', users);
+app.use('/decks', decks);
+app.use('/cards', cards);
 
 
 // catch 404 and forward to error handler
