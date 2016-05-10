@@ -48,9 +48,15 @@
       url:'/allCards',
       templateUrl: 'partials/allCards.html'
     })
-    .state('deck.newcard', {
+    .state('deck.newCard', {
       url:'/createCard',
       templateUrl: 'partials/newCard.html'
+    })
+    .state('deck.play', {
+      url: '/play',
+      templateUrl: 'partials/playGame.html',
+      controller: 'playGameCtrl',
+      controllerAs: 'vm'
     });
   });
 })();
