@@ -1,25 +1,25 @@
-<form ng-submit="" class="u-full-width">
+<form ng-submit="vm.createCard(vm.card)" class="u-full-width">
 
   <h4>Create Cards</h4>
 
   <div class="row">
     <div class="six columns">
       <label for="question">Question</label>
-      <input class="u-full-width" type="text" placeholder="What is your favorite color?" id="question">
+      <input class="u-full-width" type="text" placeholder="What is your favorite color?" id="question" ng-model="vm.card.question">
     </div>
     <div class="six columns">
       <label for="answer">Answer</label>
-      <input class="u-full-width" type="text" placeholder="Mauve" id="answer">
+      <input class="u-full-width" type="text" placeholder="Mauve" id="answer" ng-model="vm.card.answer">
     </div>
   </div>
   <div class="row">
     <div class="six columns">
       <label for="questionImage">Question Image URL (optional)</label>
-      <input class="u-full-width" type="text" placeholder="optional" id="questionImage">
+      <input class="u-full-width" type="text" placeholder="optional" id="questionImage" ng-model="vm.card.question_image">
     </div>
     <div class="six columns">
       <label for="answerImage">Answer Image URL (optional)</label>
-      <input class="u-full-width" type="text" placeholder="optional" id="answerImage">
+      <input class="u-full-width" type="text" placeholder="optional" id="answerImage" ng-model="vm.card.answer_image">
     </div>
   </div>
 

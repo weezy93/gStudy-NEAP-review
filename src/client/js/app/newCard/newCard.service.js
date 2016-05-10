@@ -9,7 +9,7 @@
 
     return {
       createCard: function (card) {
-        return crudService.addOne(deckID + '/new', card)
+        return crudService.addOne('cards/' + deckID + '/new', card)
         .then(function (result) {
           return result;
         })
