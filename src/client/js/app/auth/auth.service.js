@@ -9,11 +9,10 @@
       register: function (user) {
         return crudService.addOne('users/new', user)
         .then(function (result) {
-          console.log(result);
           return result;
         })
         .catch(function (err) {
-          console.log('err', err);
+          return err;
         });
 
       },
