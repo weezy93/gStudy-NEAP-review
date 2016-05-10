@@ -2,14 +2,18 @@
   angular.module('gStudy')
     .controller('profileCtrl', profileCtrl);
 
-  profileCtrl.$inject = ['$stateParams', 'crudService'];
+  profileCtrl.$inject = ['$stateParams', 'profileService'];
 
-  function profileCtrl($stateParams, crudService) {
+  function profileCtrl($stateParams, profileService) {
     var vm = this;
     var userID = $stateParams.userID;
+
+    vm.currentUser = {};
+
+
     vm.allDecks = [];
 
-    crudService.getAll('decks/' + userID)
+    profileService.getAllDecks(userID)
     .then(function (decks) {
       vm.allDecks = decks.data;
     });
