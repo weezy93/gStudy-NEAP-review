@@ -7,13 +7,13 @@
   function newCardCtrl($scope, newCardService) {
     var vm = this;
 
-    vm.deck;
+    vm.deckName = '';
     newCardService.getCurrentDeck()
     .then(function (result) {
-      console.log('current deck', result);
+      vm.deckName = result.data.deck[0].name;
     });
 
-    var initialDeck = {
+    var initialCard = {
       deck_id: '',
       question: '',
       answer: '',

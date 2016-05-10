@@ -20,7 +20,6 @@
       getCurrentDeck: function () {
         return crudService.getOne('decks/' + deckID)
           .then(function (result) {
-            console.log('new card service', result);
             return result;
           })
           .catch(function (err) {

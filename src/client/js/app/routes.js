@@ -31,7 +31,8 @@
     .state('createCard', {
       url:'/decks/:deckID',
       templateUrl: 'partials/createCard.html',
-      controller: 'newCardCtrl'
+      controller: 'newCardCtrl',
+      controllerAs: 'vm'
     })
     .state('createCard.allCards', {
       url:'/decks/:deckID/allCards',
