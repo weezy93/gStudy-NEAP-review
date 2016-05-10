@@ -1,2 +1,16 @@
-<h3>{{vm.deckName}}</h3>
-<div class="container" ui-view></div>
+\<div class="container">
+  <article>
+    <section>
+        {{ vm.currentCard.question }}
+    </section>
+    <section>
+      {{ vm.currentCard.answer }}
+    </section>
+  </article>
+
+  <article>
+    <div>
+      {{ vm.deckName }}
+    </div>
+  </article>
+</div>
