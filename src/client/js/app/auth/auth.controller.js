@@ -27,10 +27,16 @@
     }
 
     vm.login = function (user) {
-      console.log(user);
       return authService.login(user)
       .then(function (result) {
-        console.log(result);
+        if (result.data.length < 1) {
+          vm.error = true;
+        } else if (result.data[0].password !== user.password) {
+          vm.error = true;
+        } else {
+          $location.path('/users/' + result.data[0].id);
+          vm.user = initialUser;
+        }
       });
     }
 

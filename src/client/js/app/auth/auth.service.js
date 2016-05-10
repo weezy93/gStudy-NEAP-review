@@ -17,7 +17,13 @@
 
       },
       login: function (user) {
-
+        return crudService.getOne('users/search/' + user.username)
+        .then(function (result) {
+          return result;
+        })
+        .catch(function (err) {
+          return err;
+        });
       },
       logout: function () {}
     };
