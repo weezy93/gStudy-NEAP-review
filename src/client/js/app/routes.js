@@ -14,11 +14,15 @@
     })
     .state('register', {
       url:'/register',
-      templateUrl: 'partials/register.html'
+      templateUrl: 'partials/register.html',
+      controller: 'authCtrl',
+      controllerAs: 'vm'
     })
     .state('login', {
       url:'/login',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'partials/login.html',
+      controller: 'authCtrl',
+      controllerAs: 'vm'
     })
     .state('profile', {
       url:'/users/:userID',
