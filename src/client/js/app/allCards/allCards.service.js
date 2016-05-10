@@ -5,13 +5,13 @@
   allCardsService.$inject = ['newCardService'];
 
   function allCardsService(newCardService) {
-    vm.allCards = [];
-
-    newCardService.getCurrentDeck()
-    .then(function (result) {
-      vm.allCards = result.data.cards;
-    });
+    return {
+      getCards: function () {
+        return newCardService.getCurrentDeck()
+        .then(function (result) {
+          return result;
+        });
+      }
+    }
   }
-
-
 })();
