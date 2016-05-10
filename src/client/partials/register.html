@@ -1,5 +1,10 @@
 <h3>Register</h3>
 <form class="u-full-width" id="authForm" ng-submit="vm.register(vm.user)">
+
+  <div class="row" ng-show="vm.error === true">
+    <h5>Oops, that username is taken</h5>
+  </div>
+
   <div class="row">
     <div class="six rows">
       <label for="username">Username</label>

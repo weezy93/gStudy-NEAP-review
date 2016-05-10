@@ -1,7 +1,7 @@
 <h5>All Playable Decks</h5>
 <div class="container">
   <div class="four columns" ng-repeat="deck in vm.allDecks">
-    <h6>{{deck.name}}</h6>
+    <a href="/#/decks/{{deck.id}}"><h6>{{deck.name}}</h6></a>
   </div>
 
 </div>
