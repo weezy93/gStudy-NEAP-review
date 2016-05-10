@@ -11,5 +11,5 @@
       controller: 'newCardCtrl',
       controllerAs: 'vm'
     }
-  }
+  };
 })();

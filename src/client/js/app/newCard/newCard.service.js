@@ -9,7 +9,7 @@
 
     return {
       createCard: function (card) {
-        return crudService.addOne(deckID + '/new', card)
+        return crudService.addOne('cards/' + deckID + '/new', card)
         .then(function (result) {
           return result;
         })
@@ -20,7 +20,6 @@
       getCurrentDeck: function () {
         return crudService.getOne('decks/' + deckID)
           .then(function (result) {
-            console.log('new card service', result);
             return result;
           })
           .catch(function (err) {

@@ -28,17 +28,18 @@
       url: '/createDeck',
       templateUrl: 'partials/createDeck.html'
     })
-    .state('createCard', {
+    .state('deck', {
       url:'/decks/:deckID',
       templateUrl: 'partials/createCard.html',
-      controller: 'newCardCtrl'
+      controller: 'newCardCtrl',
+      controllerAs: 'vm'
     })
-    .state('createCard.allCards', {
-      url:'/decks/:deckID/allCards',
+    .state('deck.allCards', {
+      url:'/allCards',
       templateUrl: 'partials/allCards.html'
     })
-    .state('createCard.createCard', {
-      url:'/decks/:deckID/createCard',
+    .state('deck.newcard', {
+      url:'/createCard',
       templateUrl: 'partials/newCard.html'
     });
   });
