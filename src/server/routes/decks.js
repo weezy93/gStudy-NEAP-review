@@ -13,10 +13,15 @@ router.get('/:userID', function (req, res, next) {
 });
 
 // single deck
-router.get('/:deckID', function(req, res, next) {
+router.get('/deck/:deckID', function(req, res, next) {
+  console.log('here', req.params.deckID);
   return queries.getDeckAndCardsByDeckID(req.params.deckID)
   .then(function (result) {
     res.status(200).send(result);
+  })
+  .catch(function (err) {
+    console.log(err);
+    res.status(500).send(err);
   });
 });
 

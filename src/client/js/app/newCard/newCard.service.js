@@ -18,7 +18,7 @@
         });
       },
       getCurrentDeck: function () {
-        return crudService.getOne('decks/' + deckID)
+        return crudService.getOne('decks/deck/' + deckID)
           .then(function (result) {
             return result;
           })

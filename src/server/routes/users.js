@@ -7,14 +7,17 @@ var queries = require('./queries.js');
 router.get('/:userID', function (req, res, next) {
   return queries.getUserAndDeckNames(req.params.userID)
   .then(function (result) {
-    res.status(200).json(result);
+    res.status(200).send(result);
   });
 });
 
 router.post('/new', function (req, res, next) {
   return queries.createUser(req.body)
   .then(function (result) {
-    res.status(200).json(result);
+    res.status(200).send(result);
+  })
+  .catch(function (err) {
+    res.status(500).send(err);
   });
 });
 
