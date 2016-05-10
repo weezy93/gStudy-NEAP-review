@@ -4,13 +4,26 @@ var pg = require('pg');
 var knex = require('../../../db/knex');
 var queries = require('./queries.js');
 
-router.get('/:deckID', function(req, res, next) {
-  return queries.getDeckAndCardsByDeckID(req.params.deckID)
+// get all decks by user id
+router.get('/:userID', function (req, res, next) {
+  return queries.getDecksByUserID(req.params.userID)
   .then(function (result) {
     res.status(200).send(result);
   });
 });
 
+// single deck
+router.get('/deck/:deckID', function(req, res, next) {
+  return queries.getDeckAndCardsByDeckID(req.params.deckID)
+  .then(function (result) {
+    res.status(200).send(result);
+  })
+  .catch(function (err) {
+    res.status(500).send(err);
+  });
+});
+
+// new deck for user
 router.post('/:userID/new', function (req, res, next) {
   var params = {
     name: req.body.name,
@@ -20,6 +33,9 @@ router.post('/:userID/new', function (req, res, next) {
   return queries.createDeck(params)
   .then(function (result) {
     res.status(200).send(result);
+  })
+  .catch(function (err) {
+    res.status(500).send(err);
   });
 });
 

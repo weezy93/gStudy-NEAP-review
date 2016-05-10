@@ -5,7 +5,7 @@
     .service('crudService', ['$http', function ($http) {
 
       var url = 'http://localhost:3000/';
-      
+
       return {
         getAll: function (resource) {
           return $http({
@@ -13,7 +13,7 @@
             url: url + resource
           });
         },
-        getOne: function (resource) {
+        getOne: function (resource, payload) {
           return $http({
             method: 'GET',
             url: url + resource

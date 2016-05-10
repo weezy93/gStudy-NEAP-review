@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.integer('deck_id').references('id').inTable('decks');
     table.text('question');
     table.text('answer');
-    table.integer('score');
+    table.integer('score').defaultsTo(0);
   })
 };
 

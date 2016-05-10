@@ -14,15 +14,25 @@
     })
     .state('register', {
       url:'/register',
-      templateUrl: 'partials/register.html'
+      templateUrl: 'partials/register.html',
+      controller: 'authCtrl',
+      controllerAs: 'vm'
     })
     .state('login', {
       url:'/login',
-      templateUrl: 'partials/login.html'
+      templateUrl: 'partials/login.html',
+      controller: 'authCtrl',
+      controllerAs: 'vm'
     })
     .state('profile', {
       url:'/users/:userID',
       templateUrl: 'partials/profile.html'
+    })
+    .state('profile.allDecks', {
+      url: '/allDecks',
+      templateUrl: 'partials/allDecks.html',
+      controller: 'profileCtrl',
+      controllerAs: 'vm'
     })
     .state('profile.createDeck', {
       url: '/createDeck',

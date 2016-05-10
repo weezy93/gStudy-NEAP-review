@@ -1,1 +1,20 @@
-register
+<h3>Register</h3>
+<form class="u-full-width" id="authForm" ng-submit="vm.register(vm.user)">
+
+  <div class="row" ng-show="vm.error === true">
+    <h5>Oops, that username is taken</h5>
+  </div>
+
+  <div class="row">
+    <div class="six rows">
+      <label for="username">Username</label>
+      <input type="text" placeholder="username" required ng-model="vm.user.username">
+    </div>
+    <div class="six rows">
+      <label for="password">Password</label>
+      <input type="password" placeholder="password" required ng-model="vm.user.password">
+    </div>
+  </div>
+
+  <input class="button-primary" type="submit" value="Register">
+</form>
