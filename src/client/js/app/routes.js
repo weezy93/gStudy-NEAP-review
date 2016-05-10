@@ -24,6 +24,12 @@
       url:'/users/:userID',
       templateUrl: 'partials/profile.html'
     })
+    .state('profile.allDecks', {
+      url: '/allDecks',
+      templateUrl: 'partials/allDecks.html',
+      controller: 'profileCtrl',
+      controllerAs: 'vm'
+    })
     .state('profile.createDeck', {
       url: '/createDeck',
       templateUrl: 'partials/createDeck.html'

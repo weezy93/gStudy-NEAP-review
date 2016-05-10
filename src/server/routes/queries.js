@@ -22,6 +22,9 @@ module.exports = {
       });
     });
   },
+  getDecksByUserID: function (userID) {
+    return Decks().where('user_id', userID);
+  },
   createUser: function (params) {
     return Users().insert(params).returning('id')
     .then(function (id) {
