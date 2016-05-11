@@ -4,14 +4,17 @@
         {{ vm.allCards[vm.index].question }}
     </section>
     <hr>
-    <section>
+    <section ng-hide="vm.clicked">
+      <h1 ng-click="vm.showAnswer()">?</h1>
+    </section>
+    <section ng-show="vm.clicked">
       {{ vm.allCards[vm.index].answer }}
     </section>
   </article>
 
-  <article>
+  <article class="row">
     <div>
-      {{ vm.deckName }}
+      Total Cards: {{ vm.allCards.length }}
     </div>
   </article>
 </div>

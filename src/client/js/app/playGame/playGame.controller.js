@@ -8,12 +8,18 @@
     var vm = this;
 
     vm.allCards = [];
+    vm.clicked = false;
+
     playGameService.getAllCards($stateParams.deckID)
     .then(function (result) {
       vm.allCards = result.data.cards;
     });
 
     vm.index = 0;
+
+    vm.showAnswer = function () {
+      vm.clicked = true;
+    }
 
   }
 })();
