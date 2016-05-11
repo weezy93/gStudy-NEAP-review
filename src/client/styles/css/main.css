@@ -1,13 +1,30 @@
 #authForm {
   width: 100%;
   display: flex;
-  flex-flow: column; }
+  flex-flow: column;
+  text-align: center; }
+  #authForm .button-primary {
+    width: auto;
+    margin: auto;
+    background-color: #34342f;
+    border-color: #34342f; }
 
-.input {
-  color: green; }
+main#inputContainer {
+  display: flex;
+  width: 100%; }
+  main#inputContainer div.input {
+    width: 100%;
+    text-align: center; }
+    main#inputContainer div.input input {
+      width: 90%;
+      margin-right: auto;
+      text-align: center; }
 
 html {
   font-size: 12px; }
+
+a* a:hover {
+  text-decoration: overline; }
 
 nav {
   display: flex;
@@ -23,4 +40,5 @@ nav {
     nav ul li {
       margin: 2rem; }
       nav ul li a {
-        text-decoration: none; }
+        text-decoration: none;
+        color: #34342f; }

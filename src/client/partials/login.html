@@ -1,11 +1,11 @@
-<h3>Login</h3>
-<form class="u-full-width" id="authForm" ng-submit="vm.login(vm.user)">
+<form id="authForm" ng-submit="vm.login(vm.user)">
+  <h3>Login</h3>
 
   <div class="row" ng-show="vm.error === true">
     <h5>Oops, your username or password is incorrect</h5>
   </div>
 
-  <div class="row">
+  <main id="inputContainer" class="row">
 
     <div class="input">
       <label for="username">Username</label>
@@ -17,8 +17,8 @@
       <input type="password" placeholder="password" required ng-model="vm.user.password">
     </div>
 
-  </div>
+  </main>
 
   <input class="button-primary" type="submit" value="Login">
-  
+
 </form>
