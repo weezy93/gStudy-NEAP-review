@@ -1,10 +1,11 @@
 <div class="container">
   <article>
     <section>
-        {{ vm.currentCard.question }}
+        {{ vm.allCards[vm.index].question }}
     </section>
+    <hr>
     <section>
-      {{ vm.currentCard.answer }}
+      {{ vm.allCards[vm.index].answer }}
     </section>
   </article>
 
