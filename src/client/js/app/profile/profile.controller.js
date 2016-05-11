@@ -10,7 +10,6 @@
 
     vm.currentUser = {};
 
-
     vm.allDecks = [];
 
     profileService.getAllDecks(userID)

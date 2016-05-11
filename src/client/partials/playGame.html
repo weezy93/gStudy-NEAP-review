@@ -1,0 +1,20 @@
+<div class="container">
+  <article>
+    <section>
+        {{ vm.allCards[vm.index].question }}
+    </section>
+    <hr>
+    <section ng-hide="vm.clicked">
+      <h1 ng-click="vm.showAnswer()">?</h1>
+    </section>
+    <section ng-show="vm.clicked">
+      {{ vm.allCards[vm.index].answer }}
+    </section>
+  </article>
+
+  <article class="row">
+    <div>
+      Total Cards: {{ vm.allCards.length }}
+    </div>
+  </article>
+</div>
