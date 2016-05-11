@@ -1,0 +1,28 @@
+$grey: rgb(52, 52, 47);
+
+#authForm {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  .button-primary {
+    width: auto;
+    margin: auto;
+    background-color: $grey;
+    border-color: $grey;
+  }
+}
+
+main#inputContainer {
+  display: flex;
+  width: 100%;
+  div.input {
+    width: 100%;
+    text-align: center;
+    input {
+      width: 90%;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+}
