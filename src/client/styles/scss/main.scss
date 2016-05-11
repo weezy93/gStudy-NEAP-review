@@ -1,0 +1,29 @@
+@import "auth";
+
+html {
+  font-size: 12px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  a {
+    text-decoration: none;
+  }
+  ul {
+    width: 40%;
+    margin: auto;
+    margin-right: 1rem;
+    display: flex;
+    list-style: none;
+
+    li {
+      margin: 2rem;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+}
