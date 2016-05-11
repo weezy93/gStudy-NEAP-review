@@ -16,7 +16,7 @@ router.get('/:userID', function (req, res, next) {
 });
 
 //gets user by username
-router.get('/search/:username', function (req, res, next) {
+router.get('/login/:username', function (req, res, next) {
   return queries.getUserByUsername(req.params.username)
   .then(function (result) {
     res.status(200).send(result);
