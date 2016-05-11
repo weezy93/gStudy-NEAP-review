@@ -54,7 +54,8 @@ body {
     list-style: none; }
     .container ul li {
       margin: auto;
-      margin-top: 2rem; }
+      margin-top: 2rem;
+      margin-bottom: 2rem; }
       .container ul li a {
         text-decoration: none;
         color: #34342f; }
@@ -62,7 +63,8 @@ body {
 nav {
   display: flex;
   width: 90%;
-  margin-left: 2rem; }
+  margin-left: 2rem;
+  margin-bottom: 2rem; }
   nav a {
     text-decoration: none;
     color: #34342f; }
