@@ -8,6 +8,9 @@
     margin: auto;
     background-color: #34342f;
     border-color: #34342f; }
+    #authForm .button-primary:hover {
+      background-color: #8e2b4d;
+      border-color: #8e2b4d; }
 
 main#inputContainer {
   display: flex;
@@ -20,25 +23,59 @@ main#inputContainer {
       margin-right: auto;
       text-align: center; }
 
+ul {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  list-style: none; }
+  ul li {
+    margin: 2rem; }
+    ul li a {
+      text-decoration: none;
+      color: #34342f; }
+      ul li a:hover {
+        color: #8e2b4d; }
+
 html {
   font-size: 12px; }
 
-a* a:hover {
-  text-decoration: overline; }
+body {
+  width: 100%; }
+
+.container {
+  display: flex;
+  flex-flow: column; }
+  .container h3 {
+    margin: auto; }
+  .container ul {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    list-style: none; }
+    .container ul li {
+      margin: auto;
+      margin-top: 2rem; }
+      .container ul li a {
+        text-decoration: none;
+        color: #34342f; }
 
 nav {
   display: flex;
-  width: 100%; }
+  width: 90%;
+  margin-left: 2rem; }
   nav a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #34342f; }
+    nav a:hover {
+      color: #8e2b4d; }
   nav ul {
-    width: 40%;
     margin: auto;
-    margin-right: 1rem;
+    margin-right: 0rem;
     display: flex;
     list-style: none; }
     nav ul li {
-      margin: 2rem; }
+      margin: auto;
+      margin-top: 1.5rem; }
       nav ul li a {
         text-decoration: none;
         color: #34342f; }

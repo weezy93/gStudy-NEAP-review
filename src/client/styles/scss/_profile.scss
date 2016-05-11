@@ -1,0 +1,19 @@
+$grey: rgb(52, 52, 47);
+$darkPink: rgb(142, 43, 77);
+
+ul {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  list-style: none;
+  li {
+    margin: 2rem;
+    a {
+      text-decoration: none;
+      color: $grey;
+      &:hover {
+        color: $darkPink;
+      }
+    }
+  }
+}
