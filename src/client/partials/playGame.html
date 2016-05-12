@@ -8,17 +8,20 @@
       <h1 ng-click="vm.showAnswer()">?</h1>
     </section>
     <section ng-show="vm.clicked">
+      {{ vm.allCards[vm.index].answer }}
+      <br>
       <div class="buttons">
         <input type="button" value="Confident" ng-click="vm.confident(vm.allCards[vm.index])">
         <input type="button" value="Not Confident" ng-click="vm.notConfident(vm.allCards[vm.index])">
       </div>
-      {{ vm.allCards[vm.index].answer }}
     </section>
   </article>
 
   <article class="row">
     <div>
-      Total Cards: {{ vm.allCards.length }}
+      <h6>Total Cards: {{ vm.allCards.length }}</h6>
+      <h6>Confident in: {{ vm.cardsConfident.length }} cards</h6>
+      <h6>Not Confident in: {{ vm.allCards.length - vm.cardsConfident.length}} cards</h6>
     </div>
   </article>
 </div>

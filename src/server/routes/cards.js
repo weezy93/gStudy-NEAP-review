@@ -32,4 +32,14 @@ router.post('/:deckID/new', function(req, res, next) {
   });
 });
 
+router.put('/:cardID', function (req, res, next) {
+  queries.updateCard(req.params.cardID, req.body)
+  .then(function (result) {
+    res.status(200).send(result)
+  })
+  .catch(function (err) {
+    res.status(500).send(err);
+  });
+});
+
 module.exports = router;
