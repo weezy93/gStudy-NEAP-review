@@ -26,8 +26,14 @@
           return err;
         });
       },
-      changeScore: function (card) {
-        return crudService.updateOne(); // needs backend route built
+      changeScore: function (id, params) {
+        return crudService.updateOne('cards/' + id, params)
+        .then(function (result) {
+          return result;
+        })
+        .catch(function (err) {
+          return err;
+        });
       }
     }
 

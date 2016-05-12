@@ -1,37 +1,67 @@
 @import "auth";
+@import "profile";
 
 $grey: rgb(52, 52, 47);
+$darkPink: rgb(142, 43, 77);
 
 html {
   font-size: 12px;
 }
 
-a* {
-  a:hover {
-    text-decoration: overline;
-  }
-}
-nav {
-  display: flex;
+body {
   width: 100%;
-  a {
-    text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  h3, h5 {
+    margin: auto;
   }
   ul {
-    width: 40%;
+    width: 80%;
     margin: auto;
-    margin-right: 1rem;
     display: flex;
     list-style: none;
+    margin-bottom: 3rem;
 
     li {
-      margin: 2rem;
-
+      margin: auto;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
       a {
         text-decoration: none;
         color: $grey;
       }
     }
   }
+}
 
+nav {
+  display: flex;
+  width: 90%;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  a {
+    text-decoration: none;
+    color: $grey;
+    &:hover {
+      color: $darkPink;
+    }
+  }
+  ul {
+    margin: auto;
+    margin-right: 0rem;
+    display: flex;
+    list-style: none;
+
+    li {
+      margin: auto;
+      margin-top: 1.5rem;
+      a {
+        text-decoration: none;
+        color: $grey;
+      }
+    }
+  }
 }

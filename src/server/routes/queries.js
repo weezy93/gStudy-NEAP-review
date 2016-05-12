@@ -48,5 +48,8 @@ module.exports = {
   },
   createCard: function (params) {
     return Cards().insert(params).returning('id');
+  },
+  updateCard: function (id, params) {
+    return Cards().where('id', id).update(params).returning('id');
   }
 }
