@@ -15,7 +15,7 @@ body {
 .container {
   display: flex;
   flex-flow: column;
-  h3 {
+  h3, h5 {
     margin: auto;
   }
   ul {
@@ -23,6 +23,7 @@ body {
     margin: auto;
     display: flex;
     list-style: none;
+    margin-bottom: 3rem;
 
     li {
       margin: auto;

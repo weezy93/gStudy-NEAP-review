@@ -45,13 +45,14 @@ body {
 .container {
   display: flex;
   flex-flow: column; }
-  .container h3 {
+  .container h3, .container h5 {
     margin: auto; }
   .container ul {
     width: 80%;
     margin: auto;
     display: flex;
-    list-style: none; }
+    list-style: none;
+    margin-bottom: 3rem; }
     .container ul li {
       margin: auto;
       margin-top: 2rem;

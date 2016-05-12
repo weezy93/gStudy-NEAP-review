@@ -21,5 +21,16 @@
       vm.clicked = true;
     }
 
+    function nextCard() {
+      // increment index
+    }
+
+    vm.confident = function (card) {
+      playGameService.scoreUp
+      .then(function () {
+        nextCard();
+      });
+    }
+
   }
 })();
